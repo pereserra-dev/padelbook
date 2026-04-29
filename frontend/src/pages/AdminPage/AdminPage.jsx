@@ -2218,7 +2218,7 @@ function AdminPage() {
             {activeTab === "reservations" && (
               <section
                 ref={reservationsSectionRef}
-                className="fade-in-up delay-2 admin__section"
+                className="fade-in-up delay-2 admin__section admin__section--reservations"
               >
                 <div
                   className={`admin__section-header ${

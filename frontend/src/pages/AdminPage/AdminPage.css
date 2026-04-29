@@ -1911,6 +1911,101 @@
   gap: 0.8rem;
 }
 
+.admin__section--reservations {
+  min-width: 0;
+}
+
+.admin__section--reservations .admin__section-header {
+  margin-bottom: 0.75rem;
+}
+
+.admin__section--reservations .admin__section-header > div {
+  min-width: 0;
+}
+
+.admin__section--reservations .pb-badge-pill {
+  flex-shrink: 0;
+}
+
+.admin__section-card--reservations {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.admin__section-card--reservations .admin-res__wrapper,
+.admin__section-card--reservations .admin-res__header,
+.admin__section-card--reservations .admin-res__summary-grid,
+.admin__section-card--reservations .admin-res__tools-grid,
+.admin__section-card--reservations .admin-res__list,
+.admin__section-card--reservations .admin-res__card,
+.admin__section-card--reservations .admin-res__card-top,
+.admin__section-card--reservations .admin-res__identity-block,
+.admin__section-card--reservations .admin-res__user-row,
+.admin__section-card--reservations .admin-res__details-grid,
+.admin__section-card--reservations .admin-res__card-footer-row,
+.admin__section-card--reservations .admin-res__expandable-card,
+.admin__section-card--reservations .admin-res__expandable-grid {
+  min-width: 0;
+}
+
+.admin__section-card--reservations .admin-res__header {
+  align-items: center;
+}
+
+.admin__section-card--reservations .admin-res__subtitle,
+.admin__section-card--reservations .admin-res__primary-text,
+.admin__section-card--reservations .admin-res__secondary-text,
+.admin__section-card--reservations .admin-res__detail-value,
+.admin__section-card--reservations .admin-res__expandable-title,
+.admin__section-card--reservations .admin-res__expandable-value {
+  overflow-wrap: anywhere;
+}
+
+.admin__section-card--reservations .admin-res__tools-grid {
+  grid-template-columns: minmax(0, 1.4fr) minmax(170px, 0.55fr) max-content;
+}
+
+.admin__section-card--reservations .admin-res__field,
+.admin__section-card--reservations .admin-res__field-action,
+.admin__section-card--reservations .admin-res__field-action .btn,
+.admin__section-card--reservations .admin-res__field .pb-input {
+  min-width: 0;
+}
+
+.admin__section-card--reservations .admin-res__field .pb-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin__section-card--reservations .admin-res__field-action .btn,
+.admin__section-card--reservations .admin-res__toggle-detail-btn,
+.admin__section-card--reservations .admin-res__expandable-close,
+.admin__section-card--reservations .admin-res__empty-filtered-state .btn {
+  min-height: 44px;
+}
+
+.admin__section-card--reservations .admin-res__card {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin__section-card--reservations .admin-res__code-badge,
+.admin__section-card--reservations .admin-res__pill,
+.admin__section-card--reservations .admin-res__time-badge,
+.admin__section-card--reservations .admin-res__payment-method,
+.admin__section-card--reservations .admin-res__count-badge {
+  max-width: 100%;
+}
+
+.admin__section-card--reservations .admin-res__payment-block {
+  min-width: 0;
+}
+
+.admin__section-card--reservations .admin-res__expandable-card {
+  box-sizing: border-box;
+}
+
 .admin__summary-inline-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2622,5 +2717,317 @@
     width: fit-content;
     max-width: 100%;
     white-space: normal;
+  }
+}
+
+@media (max-width: 1180px) {
+  .admin__section-card--reservations .admin-res__details-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .admin__section-card--reservations .admin-res__summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+
+  .admin__section-card--reservations .admin-res__tools-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(150px, 0.55fr);
+    gap: 0.7rem;
+  }
+
+  .admin__section-card--reservations .admin-res__field--search {
+    grid-column: 1 / -1;
+  }
+
+  .admin__section-card--reservations .admin-res__field-action {
+    grid-column: auto;
+    align-self: end;
+  }
+
+  .admin__section-card--reservations .admin-res__field-action .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin__section--reservations .admin__section-header {
+    gap: 0.55rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .admin__section--reservations .pb-badge-pill,
+  .admin__section-card--reservations .admin-res__count-badge {
+    width: fit-content;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .admin__section-card--reservations {
+    padding: 0.7rem;
+    border-radius: 18px;
+  }
+
+  .admin__section-card--reservations .admin-res__wrapper {
+    gap: 0.72rem;
+  }
+
+  .admin__section-card--reservations .admin-res__header {
+    align-items: flex-start;
+    gap: 0.55rem;
+  }
+
+  .admin__section-card--reservations .admin-res__eyebrow {
+    margin-bottom: 0.22rem;
+    font-size: 0.68rem;
+  }
+
+  .admin__section-card--reservations .admin-res__title {
+    font-size: 1.08rem;
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+
+  .admin__section-card--reservations .admin-res__subtitle {
+    margin-top: 0.22rem;
+    font-size: 0.82rem;
+    line-height: 1.42;
+  }
+
+  .admin__section-card--reservations .admin-res__summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .admin__section-card--reservations .admin-res__summary-card {
+    padding: 0.62rem 0.68rem;
+    border-radius: 14px;
+  }
+
+  .admin__section-card--reservations .admin-res__summary-label {
+    margin-bottom: 0.18rem;
+    font-size: 0.66rem;
+    line-height: 1.2;
+  }
+
+  .admin__section-card--reservations .admin-res__summary-value {
+    font-size: 1.12rem;
+    line-height: 1.15;
+  }
+
+  .admin__section-card--reservations .admin-res__tools-grid {
+    grid-template-columns: 1fr;
+    gap: 0.58rem;
+  }
+
+  .admin__section-card--reservations .admin-res__field--search,
+  .admin__section-card--reservations .admin-res__field-action {
+    grid-column: auto;
+  }
+
+  .admin__section-card--reservations .admin-res__label {
+    font-size: 0.8rem;
+  }
+
+  .admin__section-card--reservations .admin-res__field .pb-input,
+  .admin__section-card--reservations .admin-res__field-action .btn {
+    min-height: 42px;
+    padding: 0.62rem 0.74rem;
+    border-radius: 14px;
+    font-size: 0.92rem;
+  }
+
+  .admin__section-card--reservations .admin-res__list {
+    gap: 0.65rem;
+  }
+
+  .admin__section-card--reservations .admin-res__card {
+    padding: 0.7rem;
+    border-radius: 16px;
+  }
+
+  .admin__section-card--reservations .admin-res__card-top {
+    gap: 0.58rem;
+    margin-bottom: 0.62rem;
+  }
+
+  .admin__section-card--reservations .admin-res__identity-block {
+    gap: 0.52rem;
+  }
+
+  .admin__section-card--reservations .admin-res__code-badge {
+    min-height: 30px;
+    padding: 0.3rem 0.62rem;
+    border-radius: 12px;
+    font-size: 0.74rem;
+    white-space: normal;
+  }
+
+  .admin__section-card--reservations .admin-res__user-row {
+    gap: 0.58rem;
+  }
+
+  .admin__section-card--reservations .admin-res__user-avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .admin__section-card--reservations .admin-res__primary-text {
+    font-size: 0.94rem;
+    line-height: 1.25;
+  }
+
+  .admin__section-card--reservations .admin-res__secondary-text {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .admin__section-card--reservations .admin-res__status-stack {
+    gap: 0.38rem;
+  }
+
+  .admin__section-card--reservations .admin-res__pill,
+  .admin__section-card--reservations .admin-res__time-badge,
+  .admin__section-card--reservations .admin-res__payment-method {
+    min-height: 30px;
+    padding: 0.28rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.74rem;
+    line-height: 1.15;
+    white-space: normal;
+  }
+
+  .admin__section-card--reservations .admin-res__details-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .admin__section-card--reservations .admin-res__detail-item {
+    padding: 0.56rem 0.62rem;
+    border-radius: 13px;
+  }
+
+  .admin__section-card--reservations .admin-res__detail-label,
+  .admin__section-card--reservations .admin-res__payment-label,
+  .admin__section-card--reservations .admin-res__expandable-label {
+    font-size: 0.66rem;
+    line-height: 1.18;
+  }
+
+  .admin__section-card--reservations .admin-res__detail-value,
+  .admin__section-card--reservations .admin-res__time-badge {
+    font-size: 0.84rem;
+  }
+
+  .admin__section-card--reservations .admin-res__card-footer {
+    margin-top: 0.62rem;
+  }
+
+  .admin__section-card--reservations .admin-res__card-footer-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+  }
+
+  .admin__section-card--reservations .admin-res__toggle-detail-btn {
+    width: 100%;
+    min-height: 42px;
+    border-radius: 14px;
+  }
+
+  .admin__section-card--reservations .admin-res__payment-block {
+    width: 100%;
+    align-items: flex-start;
+    gap: 0.24rem;
+  }
+
+  .admin__section-card--reservations .admin-res__payment-method {
+    width: 100%;
+  }
+
+  .admin__section-card--reservations .admin-res__expandable-card {
+    margin-top: 0.72rem;
+    padding: 0.7rem;
+    border-radius: 16px;
+  }
+
+  .admin__section-card--reservations .admin-res__expandable-head {
+    gap: 0.58rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .admin__section-card--reservations .admin-res__expandable-title {
+    font-size: 1rem;
+    letter-spacing: 0;
+  }
+
+  .admin__section-card--reservations .admin-res__expandable-kicker {
+    padding: 0.3rem 0.58rem;
+    border-radius: 12px;
+    font-size: 0.66rem;
+  }
+
+  .admin__section-card--reservations .admin-res__expandable-close {
+    width: 100%;
+    min-height: 40px;
+  }
+
+  .admin__section-card--reservations .admin-res__expandable-summary {
+    gap: 0.38rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .admin__section-card--reservations .admin-res__expandable-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .admin__section-card--reservations .admin-res__expandable-item {
+    padding: 0.58rem 0.62rem;
+    border-radius: 13px;
+  }
+
+  .admin__section-card--reservations .admin-res__expandable-value {
+    font-size: 0.86rem;
+    line-height: 1.35;
+  }
+
+  .admin__section-card--reservations .admin-res__empty-filtered-state,
+  .admin__section-card--reservations .admin-res__empty-state {
+    padding: 0.85rem;
+    border-radius: 16px;
+  }
+
+  .admin__section-card--reservations .admin-res__empty-filtered-state .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .admin__section-card--reservations {
+    padding: 0.62rem;
+  }
+
+  .admin__section-card--reservations .admin-res__summary-grid,
+  .admin__section-card--reservations .admin-res__details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin__section-card--reservations .admin-res__card {
+    padding: 0.62rem;
+  }
+
+  .admin__section-card--reservations .admin-res__status-stack,
+  .admin__section-card--reservations .admin-res__expandable-summary {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin__section-card--reservations .admin-res__pill,
+  .admin__section-card--reservations .admin-res__time-badge,
+  .admin__section-card--reservations .admin-res__payment-method {
+    width: 100%;
   }
 }
