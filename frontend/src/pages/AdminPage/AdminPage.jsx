@@ -1647,7 +1647,7 @@ function AdminPage() {
               <>
                 <section
                   ref={dashboardSectionRef}
-                  className="fade-in-up delay-1 admin__section"
+                  className="fade-in-up delay-1 admin__section admin__section--dashboard-overview"
                 >
                   <div
                     className={`admin__section-header ${
@@ -2607,7 +2607,7 @@ function AdminPage() {
               <>
                 <section
                   ref={editSectionRef}
-                  className="fade-in-up delay-1 admin__section"
+                  className="fade-in-up delay-1 admin__section admin__section--court-form"
                 >
                   <div
                     className={`admin__section-header ${
@@ -2639,7 +2639,7 @@ function AdminPage() {
                     )}
                   </div>
 
-                  <div className="pb-surface-card admin__section-card">
+                  <div className="pb-surface-card admin__section-card admin__section-card--court-form">
                     <CreateCourtForm
                       newCourt={newCourt}
                       setNewCourt={setNewCourt}
@@ -2653,7 +2653,7 @@ function AdminPage() {
 
                 <section
                   ref={courtsSectionRef}
-                  className="fade-in-up delay-3 admin__section"
+                  className="fade-in-up delay-3 admin__section admin__section--courts-list"
                 >
                   <div
                     className={`admin__section-header ${
@@ -2798,6 +2798,7 @@ function AdminPage() {
                         <div
                           key={court.id}
                           id={`admin-court-card-${court.id}`}
+                          className="admin__court-card-shell"
                         >
                           <CourtCard
                             court={court}
@@ -2835,7 +2836,7 @@ function AdminPage() {
                       )}
                     </div>
                   ) : (
-                    <div className="pb-surface-card admin__empty-filtered-state">
+                    <div className="pb-surface-card admin__empty-filtered-state admin__empty-filtered-state--courts">
                       <p className="admin__empty-filtered-title">
                         No hi ha pistes que coincideixin
                       </p>

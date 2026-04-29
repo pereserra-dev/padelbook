@@ -332,6 +332,40 @@
   box-shadow: 0 12px 22px rgba(37, 99, 235, 0.2);
 }
 
+.admin__section--court-form,
+.admin__section--courts-list {
+  min-width: 0;
+}
+
+.admin__section-card--court-form {
+  overflow: hidden;
+}
+
+.admin__section-card--court-form .court-form__top-panel,
+.admin__section-card--court-form .court-form__top-panel-content,
+.admin__section-card--court-form .court-form__top-panel-summary,
+.admin__section-card--court-form .court-form__form-grid,
+.admin__section-card--court-form .court-form__field,
+.admin__section-card--court-form .court-form__preview-panel,
+.admin__section-card--court-form .court-form__info-panel {
+  min-width: 0;
+}
+
+.admin__section-card--court-form .court-form__input,
+.admin__section-card--court-form .court-form__textarea {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.admin__section-card--court-form .court-form__top-panel-title,
+.admin__section-card--court-form .court-form__top-panel-text,
+.admin__section-card--court-form .court-form__summary-value,
+.admin__section-card--court-form .court-form__preview-title,
+.admin__section-card--court-form .court-form__preview-description,
+.admin__section-card--court-form .court-form__info-panel-text {
+  overflow-wrap: anywhere;
+}
+
 .admin__section-card--mobile {
   padding: 0.85rem;
 }
@@ -758,6 +792,26 @@
   align-items: end;
 }
 
+.admin__section-card--courts-tools .admin__court-tools-grid,
+.admin__section-card--courts-tools .admin__court-filter-field {
+  min-width: 0;
+}
+
+.admin__section-card--courts-tools .pb-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.admin__section-card--courts-tools .admin__court-filter-actions {
+  min-width: 0;
+}
+
+.admin__section-card--courts-tools .admin__court-filter-actions .btn {
+  min-height: 44px;
+  white-space: nowrap;
+}
+
 .admin__court-quick-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -826,10 +880,17 @@
   grid-template-columns: repeat(auto-fill, minmax(248px, 1fr));
 }
 
+.admin__court-card-shell {
+  min-width: 0;
+  height: 100%;
+}
+
 .admin__cards--courts .court-card {
   gap: 0.62rem;
   padding: 0.85rem;
   border-radius: 20px;
+  min-width: 0;
+  overflow: hidden;
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
 }
 
@@ -858,6 +919,14 @@
 .admin__cards--courts .court-card__description-box {
   padding: 0.62rem 0.72rem;
   border-radius: 14px;
+}
+
+.admin__cards--courts .court-card__title,
+.admin__cards--courts .court-card__subtitle,
+.admin__cards--courts .court-card__meta-value,
+.admin__cards--courts .court-card__description-text,
+.admin__cards--courts .court-card__confirm-text {
+  overflow-wrap: anywhere;
 }
 
 .admin__cards--courts .court-card__footer {
@@ -1956,4 +2025,602 @@
 
 .admin__maintenance-actions--mobile .btn {
   width: 100%;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .admin__hero {
+    padding: 1rem;
+  }
+
+  .admin__hero-grid {
+    gap: 1rem;
+  }
+
+  .admin__hero-panel-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .admin__dashboard-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .admin__insights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .admin__container--mobile {
+    padding: 0 0.75rem;
+  }
+
+  .admin__hero--mobile {
+    padding: 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+  }
+
+  .admin__hero-grid--mobile {
+    gap: 0.85rem;
+  }
+
+  .admin__hero-content {
+    gap: 0.45rem;
+  }
+
+  .admin__title--mobile {
+    margin-top: 0.3rem;
+    font-size: 1.65rem;
+    line-height: 1.12;
+    letter-spacing: 0;
+  }
+
+  .admin__subtitle {
+    margin-top: 0.4rem;
+    font-size: 0.88rem;
+    line-height: 1.45;
+  }
+
+  .admin__hero-tabs--mobile {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+    margin-top: 0.7rem;
+    padding: 0.25rem;
+    border-radius: 16px;
+  }
+
+  .admin__hero-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .admin__hero-tabs--mobile .admin__hero-tab {
+    min-height: 40px;
+    padding: 0.58rem 0.5rem;
+    border-radius: 12px;
+  }
+
+  .admin__hero-tab-label {
+    min-width: 0;
+    font-size: 0.86rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.15;
+  }
+
+  .admin__hero-panel {
+    padding: 0.7rem;
+    border-radius: 18px;
+  }
+
+  .admin__hero-panel-label {
+    margin-bottom: 0.55rem;
+    font-size: 0.72rem;
+  }
+
+  .admin__hero-panel-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+
+  .admin__hero-panel-card {
+    min-width: 0;
+    padding: 0.6rem;
+    border-radius: 14px;
+  }
+
+  .admin__hero-panel-card-label {
+    margin-bottom: 0.22rem;
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+
+  .admin__hero-panel-card-value {
+    font-size: 1.35rem;
+  }
+
+  .admin__section--dashboard-overview .admin__section-header {
+    gap: 0.65rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .admin__section--dashboard-overview .btn {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .admin__section-title--mobile {
+    font-size: 1.45rem;
+    line-height: 1.18;
+  }
+
+  .admin__dashboard-stats-grid--mobile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .admin__dashboard-stat-card {
+    padding: 0.65rem 0.7rem;
+    border-radius: 16px;
+  }
+
+  .admin__dashboard-stat-top {
+    gap: 0.42rem;
+    margin-bottom: 0.38rem;
+  }
+
+  .admin__dashboard-stat-icon {
+    font-size: 0.82rem;
+  }
+
+  .admin__dashboard-stat-label {
+    font-size: 0.76rem;
+    line-height: 1.25;
+  }
+
+  .admin__dashboard-stat-value--mobile {
+    font-size: 1.45rem;
+  }
+
+  .admin__section-card--executive,
+  .admin__dashboard-card {
+    padding: 0.75rem;
+    border-radius: 18px;
+  }
+
+  .admin__analytics-header--mobile {
+    gap: 0.45rem;
+    margin-bottom: 0.55rem;
+  }
+
+  .admin__analytics-header--mobile .pb-badge-pill {
+    width: fit-content;
+  }
+
+  .admin__analytics-title {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .admin__insights-grid--mobile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .admin__insight-card {
+    min-height: 0;
+    padding: 0.68rem;
+    border-radius: 15px;
+    gap: 0.22rem;
+  }
+
+  .admin__insight-label {
+    font-size: 0.68rem;
+    line-height: 1.25;
+  }
+
+  .admin__insight-value {
+    font-size: 0.98rem;
+    line-height: 1.25;
+  }
+
+  .admin__insight-detail {
+    font-size: 0.78rem;
+    line-height: 1.38;
+  }
+
+  .admin__section--dashboard-main,
+  .admin__section--dashboard-bottom,
+  .admin__section--dashboard-feature {
+    margin-top: 0.8rem;
+  }
+
+  .admin__section--compact-top {
+    margin-bottom: 0.85rem;
+  }
+
+  .admin__analytics-grid--mobile {
+    gap: 0.7rem;
+  }
+
+  .admin__metric-list,
+  .admin__logs-list--compact {
+    gap: 0.5rem;
+  }
+
+  .admin__metric-item,
+  .admin__metric-item--compact-court,
+  .admin__metric-item--compact-date {
+    gap: 0.3rem;
+    padding: 0.62rem 0.68rem;
+    border-radius: 14px;
+  }
+
+  .admin__metric-top-row--mobile {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.55rem;
+    margin-bottom: 0.12rem;
+  }
+
+  .admin__metric-label {
+    min-width: 0;
+    font-size: 0.84rem;
+  }
+
+  .admin__metric-value {
+    flex: 0 0 auto;
+    font-size: 0.88rem;
+  }
+
+  .admin__metric-bar-track {
+    height: 7px;
+  }
+
+  .admin__compact-support-text,
+  .admin__empty-analytics-text {
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
+  .admin__dashboard-card--logs .admin__logs-filters-grid--mobile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .admin__dashboard-card--logs .admin__logs-filters-grid--mobile .admin__court-filter-field:first-child,
+  .admin__dashboard-card--logs .admin__logs-filters-grid--mobile .admin__court-filter-actions {
+    grid-column: 1 / -1;
+  }
+
+  .admin__dashboard-card--logs .admin__logs-filters-grid--mobile .admin__court-filter-actions {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .admin__dashboard-card--logs .admin__logs-filters-grid--mobile .admin__court-filter-actions .btn {
+    width: 100%;
+    min-height: 42px;
+    padding: 0.62rem 0.85rem;
+    border-radius: 14px;
+  }
+
+  .admin__log-item--compact {
+    padding: 0.68rem 0.75rem;
+    border-radius: 15px;
+  }
+
+  .admin__log-top-row--mobile {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .admin__log-date {
+    font-size: 0.76rem;
+    text-align: right;
+  }
+
+  .admin__log-summary-row {
+    gap: 0.45rem;
+    margin-bottom: 0.28rem;
+  }
+
+  .admin__log-summary {
+    font-size: 0.9rem;
+  }
+
+  .admin__log-entity-pill {
+    min-height: 28px;
+    padding: 0.26rem 0.6rem;
+    font-size: 0.72rem;
+  }
+
+  .admin__log-admin,
+  .admin__log-details {
+    font-size: 0.82rem;
+    line-height: 1.42;
+  }
+
+  .admin__log-actions {
+    margin-top: 0.55rem;
+  }
+
+  .admin__log-actions .btn,
+  .admin__logs-toggle .btn,
+  .admin__metrics-toggle .btn {
+    width: 100%;
+    min-height: 38px;
+  }
+}
+
+@media (max-width: 520px) {
+  .admin__hero-panel-grid,
+  .admin__insights-grid--mobile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin__dashboard-stats-grid--mobile {
+    gap: 0.5rem;
+  }
+
+  .admin__dashboard-card--logs .admin__logs-filters-grid--mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .admin__hero-tabs--mobile,
+  .admin__hero-panel-grid,
+  .admin__dashboard-stats-grid--mobile,
+  .admin__insights-grid--mobile {
+    grid-template-columns: 1fr;
+  }
+
+  .admin__log-top-row--mobile,
+  .admin__metric-top-row--mobile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin__log-date {
+    text-align: left;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .admin__section-card--court-form .court-form__top-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .admin__section-card--court-form .court-form__top-panel-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .admin__section-card--courts-tools .admin__court-tools-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(140px, 0.65fr) minmax(140px, 0.65fr);
+  }
+
+  .admin__section-card--courts-tools .admin__court-filter-actions {
+    grid-column: 1 / -1;
+    justify-self: end;
+  }
+
+  .admin__cards--courts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .admin__section--court-form,
+  .admin__section--courts-list {
+    margin-bottom: 1rem;
+  }
+
+  .admin__section--court-form .admin__section-header,
+  .admin__section--courts-list .admin__section-header {
+    gap: 0.55rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .admin__section--courts-list .pb-badge-pill {
+    width: fit-content;
+  }
+
+  .admin__section-card--court-form,
+  .admin__section-card--courts-tools {
+    padding: 0.72rem;
+    border-radius: 18px;
+  }
+
+  .admin__section-card--court-form > .court-form__wrapper {
+    gap: 0.65rem;
+  }
+
+  .admin__section-card--court-form .court-form__top-panel {
+    padding: 0.7rem;
+    border-radius: 16px;
+  }
+
+  .admin__section-card--court-form .court-form__top-panel-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .admin__section-card--court-form .court-form__summary-item {
+    padding: 0.5rem 0.62rem;
+  }
+
+  .admin__section-card--court-form .court-form__top-panel-title {
+    font-size: 1.08rem;
+    line-height: 1.25;
+  }
+
+  .admin__section-card--court-form .court-form__top-panel-text,
+  .admin__section-card--court-form .court-form__helper-text,
+  .admin__section-card--court-form .court-form__info-panel-text,
+  .admin__section-card--court-form .court-form__preview-description {
+    font-size: 0.82rem;
+    line-height: 1.42;
+  }
+
+  .admin__section-card--court-form .court-form__form-grid {
+    gap: 0.62rem;
+  }
+
+  .admin__section-card--court-form .court-form__input,
+  .admin__section-card--court-form .court-form__textarea {
+    min-height: 42px;
+    padding: 0.66rem 0.75rem;
+    border-radius: 14px;
+    font-size: 0.95rem;
+  }
+
+  .admin__section-card--court-form .court-form__textarea {
+    min-height: 92px;
+  }
+
+  .admin__section-card--court-form .court-form__preview-panel,
+  .admin__section-card--court-form .court-form__info-panel {
+    padding: 0.72rem;
+    border-radius: 16px;
+  }
+
+  .admin__section-card--court-form .court-form__actions {
+    gap: 0.5rem;
+  }
+
+  .admin__section-card--court-form .court-form__actions .btn {
+    min-height: 42px;
+    padding: 0.65rem 0.85rem;
+  }
+
+  .admin__section-card--courts-tools {
+    gap: 0.62rem;
+  }
+
+  .admin__section-card--courts-tools .admin__court-tools-grid {
+    gap: 0.62rem;
+  }
+
+  .admin__section-card--courts-tools .admin__court-filter-actions {
+    width: 100%;
+  }
+
+  .admin__section-card--courts-tools .admin__court-filter-actions .btn {
+    width: 100%;
+    min-height: 42px;
+    padding: 0.62rem 0.85rem;
+    border-radius: 14px;
+  }
+
+  .admin__section-card--courts-tools .pb-input {
+    min-height: 42px;
+    padding: 0.62rem 0.75rem;
+    border-radius: 14px;
+  }
+
+  .admin__court-quick-stats--mobile {
+    gap: 0.5rem;
+    margin-top: 0.62rem;
+  }
+
+  .admin__court-quick-stat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    padding: 0.62rem 0.72rem;
+    border-radius: 14px;
+  }
+
+  .admin__court-quick-stat-label {
+    margin-bottom: 0;
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+
+  .admin__court-quick-stat-value {
+    font-size: 1rem;
+  }
+
+  .admin__cards.admin__cards--courts.admin__cards--mobile {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    margin-top: 0.7rem;
+  }
+
+  .admin__cards--courts .court-card {
+    gap: 0.55rem;
+    padding: 0.72rem;
+    border-radius: 16px;
+  }
+
+  .admin__cards--courts .court-card__top-bar {
+    gap: 0.45rem;
+  }
+
+  .admin__cards--courts .court-card__title {
+    font-size: 0.98rem;
+  }
+
+  .admin__cards--courts .court-card__subtitle,
+  .admin__cards--courts .court-card__description-text,
+  .admin__cards--courts .court-card__confirm-text {
+    font-size: 0.82rem;
+    line-height: 1.42;
+  }
+
+  .admin__cards--courts .court-card__meta-grid {
+    grid-template-columns: 1fr;
+    gap: 0.42rem;
+  }
+
+  .admin__cards--courts .court-card__meta-item,
+  .admin__cards--courts .court-card__description-box {
+    padding: 0.52rem 0.6rem;
+    border-radius: 12px;
+  }
+
+  .admin__cards--courts .court-card__footer,
+  .admin__cards--courts .court-card__confirm-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.45rem;
+  }
+
+  .admin__cards--courts .court-card__footer .btn,
+  .admin__cards--courts .court-card__confirm-actions .btn {
+    width: 100%;
+    min-height: 40px;
+  }
+
+  .admin__courts-toggle .btn,
+  .admin__empty-filtered-state--courts .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .admin__section-card--court-form .court-form__preview-header,
+  .admin__cards--courts .court-card__top-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin__section-card--court-form .court-form__mode-badge,
+  .admin__section-card--court-form .court-form__preview-status,
+  .admin__cards--courts .court-card__status-badge,
+  .admin__cards--courts .court-card__info-badge {
+    width: fit-content;
+    max-width: 100%;
+    white-space: normal;
+  }
 }
