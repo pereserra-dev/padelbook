@@ -369,26 +369,32 @@ function RegisterPage() {
             <div className="register__benefit-grid">
               <div className="register__benefit-card">
                 <span className="register__benefit-icon">⚡</span>
-                <strong className="register__benefit-title">Accés ràpid</strong>
-                <p className="register__benefit-text">
-                  Entra i comença a utilitzar la plataforma en pocs segons.
-                </p>
+                <div className="register__benefit-copy">
+                  <strong className="register__benefit-title">Accés ràpid</strong>
+                  <p className="register__benefit-text">
+                    Entra i comença a utilitzar la plataforma en pocs segons.
+                  </p>
+                </div>
               </div>
 
               <div className="register__benefit-card">
                 <span className="register__benefit-icon">🎾</span>
-                <strong className="register__benefit-title">Reserva fàcil</strong>
-                <p className="register__benefit-text">
-                  Consulta pistes i gestiona el teu historial sense complicacions.
-                </p>
+                <div className="register__benefit-copy">
+                  <strong className="register__benefit-title">Reserva fàcil</strong>
+                  <p className="register__benefit-text">
+                    Consulta pistes i gestiona el teu historial sense complicacions.
+                  </p>
+                </div>
               </div>
 
               <div className="register__benefit-card">
                 <span className="register__benefit-icon">🔒</span>
-                <strong className="register__benefit-title">Compte segur</strong>
-                <p className="register__benefit-text">
-                  Crea una contrasenya robusta amb ajuda visual en temps real.
-                </p>
+                <div className="register__benefit-copy">
+                  <strong className="register__benefit-title">Compte segur</strong>
+                  <p className="register__benefit-text">
+                    Crea una contrasenya robusta amb ajuda visual en temps real.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

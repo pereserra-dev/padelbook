@@ -494,17 +494,19 @@
   }
 
   .register__benefit-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.55rem;
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
   }
 
   .register__benefit-card {
     display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.38rem;
-    border-radius: 16px;
-    padding: 0.58rem;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.55rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 14px;
+    padding: 0.62rem;
     min-width: 0;
   }
 
@@ -513,17 +515,21 @@
   }
 
   .register__benefit-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 11px;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
     margin-bottom: 0;
-    font-size: 0.92rem;
+    font-size: 1rem;
     flex: 0 0 auto;
+  }
+
+  .register__benefit-copy {
+    min-width: 0;
   }
 
   .register__benefit-title {
     margin-bottom: 0;
-    font-size: 0.84rem;
+    font-size: 0.88rem;
     line-height: 1.2;
     overflow-wrap: anywhere;
   }
