@@ -452,7 +452,6 @@ function Navbar() {
       {shouldShowMobileNavigation && (
         <div
           className={`pb-navbar__mobile-panel ${isMobileMenuOpen ? "is-open" : ""}`}
-          aria-hidden={!isMobileMenuOpen}
         >
           <div className="pb-navbar__mobile-links">
             {mobileNavLinks.map((link) => (
