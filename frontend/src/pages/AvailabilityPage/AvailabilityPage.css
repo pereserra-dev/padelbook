@@ -1297,7 +1297,7 @@
   }
 
   .ap-floating-price-group {
-    width: 100%;
+    width: fit-content;
     align-items: center;
     flex-wrap: nowrap;
     height: 26px;
@@ -1322,6 +1322,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 
   .ap-floating-total {
@@ -1331,6 +1333,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 
   .ap-floating-feedback {
