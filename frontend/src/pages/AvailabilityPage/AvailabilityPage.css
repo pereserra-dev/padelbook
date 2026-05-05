@@ -1,4 +1,5 @@
 .ap-wrapper {
+  --ap-bottom-bar-height: 156px;
   background:
     radial-gradient(circle at top, rgba(37, 99, 235, 0.08), transparent 30%),
     linear-gradient(180deg, #f8fafc 0%, #eef4ff 100%);
@@ -7,10 +8,20 @@
   color: #0f172a;
 }
 
+.ap-wrapper.has-bottom-bar {
+  min-height: 100dvh;
+}
+
 .ap-container {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+
+.ap-container--with-bottom-bar {
+  padding-bottom: calc(
+    var(--ap-bottom-bar-height) + env(safe-area-inset-bottom, 0px) + 1.25rem
+  );
 }
 
 .ap-hero-card {
@@ -653,7 +664,7 @@
 }
 
 .ap-floating-action {
-  --ap-bar-height: 132px;
+  --ap-bar-height: var(--ap-bottom-bar-height);
   --ap-summary-column: minmax(300px, 1fr);
   --ap-duration-column: 136px;
   --ap-payment-column: 300px;
@@ -663,12 +674,15 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: var(--ap-bar-height);
+  height: calc(var(--ap-bar-height) + env(safe-area-inset-bottom, 0px));
+  max-height: calc(100dvh - 0.75rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   border-top: 1px solid rgba(226, 232, 240, 0.9);
   box-shadow: 0 -14px 40px rgba(15, 23, 42, 0.08);
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom, 0px));
   z-index: 100;
   box-sizing: border-box;
 }
@@ -760,7 +774,7 @@
 
 .ap-floating-feedback {
   width: 100%;
-  height: 36px;
+  min-height: 44px;
   margin: 0;
   padding: 0.42rem 0.62rem;
   border-radius: 12px;
@@ -920,10 +934,6 @@
 .ap-reserve-btn--loading {
   opacity: 0.88;
   filter: saturate(0.94);
-}
-
-.ap-bottom-spacing {
-  height: 132px;
 }
 
 @media (max-width: 1140px) and (min-width: 769px) {
@@ -1098,8 +1108,18 @@
 }
 
 @media (max-width: 768px) {
+  .ap-wrapper {
+    --ap-bottom-bar-height: 392px;
+  }
+
   .ap-container {
     padding: 0 0.85rem;
+  }
+
+  .ap-container--with-bottom-bar {
+    padding-bottom: calc(
+      var(--ap-bottom-bar-height) + env(safe-area-inset-bottom, 0px) + 1rem
+    );
   }
 
   .ap-hero-card {
@@ -1212,13 +1232,13 @@
   }
 
   .ap-floating-action {
-    --ap-bar-height: 344px;
     padding: 0.9rem 1rem;
+    padding-bottom: calc(0.9rem + env(safe-area-inset-bottom, 0px));
   }
 
   .ap-floating-inner {
     grid-template-columns: minmax(0, 1fr) 38px;
-    grid-template-rows: 128px 62px 62px 52px;
+    grid-template-rows: 154px 62px 62px 52px;
     align-items: stretch;
     gap: 0.65rem;
   }
@@ -1252,6 +1272,7 @@
   .ap-floating-price-group {
     width: 100%;
     align-items: flex-start;
+    flex-wrap: wrap;
     min-height: 30px;
   }
 
@@ -1270,10 +1291,11 @@
 
   .ap-floating-total {
     font-size: 0.82rem;
+    white-space: normal;
   }
 
   .ap-floating-feedback {
-    height: 38px;
+    min-height: 48px;
     font-size: 0.78rem;
     line-height: 1.25;
   }
@@ -1340,9 +1362,6 @@
     min-width: 0;
   }
 
-  .ap-bottom-spacing {
-    height: 344px;
-  }
 }
 
 /* 🎾 TIPUS DE PISTA */

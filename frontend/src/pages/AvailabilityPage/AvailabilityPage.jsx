@@ -168,10 +168,6 @@ function AvailabilityPage() {
   const isVisibleStartSlot = (slot) => {
     if (!slot?.hora_inici) return false;
 
-    if (selectedDuration === 3) {
-      return slot.hora_inici <= "19:30:00";
-    }
-
     return slot.hora_inici <= "20:00:00";
   };
 
@@ -765,8 +761,16 @@ function AvailabilityPage() {
     : "";
 
   return (
-    <div className="ap-wrapper">
-      <div className="ap-container">
+    <div
+      className={`ap-wrapper ${
+        selectedSlot && !success ? "has-bottom-bar" : ""
+      }`}
+    >
+      <div
+        className={`ap-container ${
+          selectedSlot && !success ? "ap-container--with-bottom-bar" : ""
+        }`}
+      >
         <header className="fade-in-up ap-hero-card">
           <div className="ap-hero-card__grid">
             <div className="ap-hero-card__main">
@@ -1159,10 +1163,6 @@ function AvailabilityPage() {
                           slotIndex
                         );
 
-                        const shouldHideSlot =
-                          showOnlyAvailable &&
-                          (!isValid || isPastSlot);
-                        
                         const isSoftAvailable =
                           !isPastSlot &&
                           slot.disponible &&
@@ -1172,9 +1172,7 @@ function AvailabilityPage() {
                         return (
                           <div
                             key={slot.time_slot_id}
-                            className={`ap-slot-item ${
-                              shouldHideSlot ? "is-hidden" : ""
-                            }`}
+                            className="ap-slot-item"
                           >
                             <button
                               onClick={() => handleSlotClick(slot, isSelected)}
@@ -1340,7 +1338,6 @@ function AvailabilityPage() {
         </div>
       )}
 
-      {selectedSlot && !success && <div className="ap-bottom-spacing"></div>}
     </div>
   );
 }
