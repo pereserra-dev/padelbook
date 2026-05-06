@@ -1,7 +1,6 @@
 require("dotenv").config();
 
 const requiredEnv = [
-  "PORT",
   "DB_HOST",
   "DB_USER",
   "DB_NAME",
