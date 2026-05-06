@@ -92,10 +92,7 @@ exports.createReservation = async (req, res) => {
       return fail(res, "Mètode de pagament no vàlid", 400);
     }
 
-    let estat_pagament = PAYMENT_STATUS.PENDING;
-    if (metode_pagament === PAYMENT_METHOD.ONLINE) {
-      estat_pagament = PAYMENT_STATUS.PAID;
-    }
+    const estat_pagament = PAYMENT_STATUS.PENDING;
 
     const [courts] = await connection.query(
       "SELECT id, estat, preu_persona_1h, preu_persona_1h30, nom_pista, tipus FROM courts WHERE id = ? LIMIT 1",
