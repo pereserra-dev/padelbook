@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import api from "../../api/axios";
 import { getUserFromToken } from "../../utils/auth";
 import "./Navbar.css";
-import logo from "../../assets/images/padelbookLogo.png";
+import logo from "../../assets/images/padelbooklogo.png";
 
 function Navbar() {
   const navigate = useNavigate();
