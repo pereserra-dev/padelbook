@@ -57,16 +57,6 @@ const buildVerificationEmail = ({ nom, verifyUrl }) => {
         </a>
       </div>
 
-      <p style="margin: 0 0 14px; font-size: 15px; color: #475569;">
-        Si el botó no funciona, pots copiar i aferrar aquest enllaç al navegador:
-      </p>
-
-      <p style="margin: 0 0 18px; word-break: break-all;">
-        <a href="${verifyUrl}" target="_blank" style="color: #2563eb;">
-          ${verifyUrl}
-        </a>
-      </p>
-
       <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 16px; margin-top: 24px;">
         <p style="margin: 0 0 8px; font-size: 14px; color: #0f172a; font-weight: 700;">
           Important
