@@ -258,7 +258,7 @@ exports.createReservation = async (req, res) => {
 
     if (userDetail?.email) {
       try {
-        await sendEmail({
+        sendEmail({
           to: userDetail.email,
           subject: `Reserva confirmada - ${codi_reserva}`,
           html: buildReservationCreatedEmail({
@@ -272,6 +272,8 @@ exports.createReservation = async (req, res) => {
             estat_pagament,
             metode_pagament,
           }),
+        }).catch((emailError) => {
+          console.error("Error enviant email de reserva:", emailError);
         });
       } catch (emailError) {
         console.error("Error enviant email de reserva:", emailError);
@@ -454,7 +456,7 @@ exports.deleteReservation = async (req, res) => {
     // Enviar email de cancel·lació de reserva
     if (reservationDetails?.email) {
       try {
-        await sendEmail({
+        sendEmail({
           to: reservationDetails.email,
           subject: `Reserva cancel·lada - ${reservationDetails.codi_reserva}`,
           html: buildReservationCancelledEmail({
@@ -468,6 +470,8 @@ exports.deleteReservation = async (req, res) => {
             estat_pagament: reservationDetails.estat_pagament,
             metode_pagament: reservationDetails.metode_pagament,
           }),
+        }).catch((emailError) => {
+          console.error("Error enviant email de cancel·lació:", emailError);
         });
       } catch (emailError) {
         console.error("Error enviant email de cancel·lació:", emailError);
