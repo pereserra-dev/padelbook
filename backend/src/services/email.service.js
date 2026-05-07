@@ -16,6 +16,15 @@ const transporter = nodemailer.createTransport({
 const sendEmail = async ({ to, subject, html }) => {
   if (!to) return;
 
+  if (
+    !process.env.MAIL_HOST ||
+    !process.env.MAIL_USER ||
+    !process.env.MAIL_PASS
+  ) {
+    console.warn("Emails desactivats: falten variables MAIL_*");
+    return;
+  }
+
   await transporter.sendMail({
     from: process.env.MAIL_FROM || process.env.MAIL_USER,
     to,
