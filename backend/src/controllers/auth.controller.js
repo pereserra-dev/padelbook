@@ -92,7 +92,7 @@ exports.register = async (req, res) => {
     const hash = await bcrypt.hash(password, 10);
 
     const [insertResult] = await db.query(
-      "INSERT INTO users (nom, llinatges, email, password_hash, rol, email_verificat) VALUES (?, ?, ?, ?, 'usuari', 0)",
+      "INSERT INTO users (nom, llinatges, email, password_hash, rol, email_verificat) VALUES (?, ?, ?, ?, 'usuari', 1)",
       [nom, llinatges, email, hash]
     );
 
@@ -101,12 +101,13 @@ exports.register = async (req, res) => {
       email,
     });
 
-    await createAndSendVerificationEmail({
-      userId: insertResult.insertId,
-      nom,
-      email,
-      subject: "Verifica el teu compte - PadelBook",
-    });
+    // Temporalment desactivat fins a configurar el sistema d'emails professional
+    // await createAndSendVerificationEmail({
+    //   userId: insertResult.insertId,
+    //   nom,
+    //   email,
+    //   subject: "Verifica el teu compte - PadelBook",
+    // });
 
     return message(
       res,
