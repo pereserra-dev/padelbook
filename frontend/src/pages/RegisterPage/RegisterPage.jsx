@@ -145,6 +145,8 @@ function RegisterPage() {
   }, []);
 
   useEffect(() => {
+    const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+    
     if (!siteKey) {
       console.warn("Turnstile desactivat: falta VITE_TURNSTILE_SITE_KEY");
       setTurnstileReady(true);
