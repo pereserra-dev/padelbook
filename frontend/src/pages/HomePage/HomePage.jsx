@@ -31,7 +31,9 @@ function HomePage() {
     const fetchHomeAvailability = async () => {
       try {
         const today = new Date().toISOString().slice(0, 10);
-        const response = await fetch(`http://localhost:3000/availability?date=${today}`);
+        const apiUrl = import.meta.env.VITE_API_URL;
+
+        const response = await fetch(`${apiUrl}/availability?date=${today}`);
         const result = await response.json();
 
         setHomeAvailabilityCourts(result.data?.courts || []);
