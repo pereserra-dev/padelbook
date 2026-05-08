@@ -1,8 +1,9 @@
 .ap-wrapper {
   --ap-bottom-bar-height: 184px;
   background:
-    radial-gradient(circle at top, rgba(37, 99, 235, 0.08), transparent 30%),
-    linear-gradient(180deg, #f8fafc 0%, #eef4ff 100%);
+    radial-gradient(circle at 14% 0%, rgba(20, 184, 166, 0.12), transparent 25rem),
+    radial-gradient(circle at 88% 0%, rgba(37, 99, 235, 0.14), transparent 26rem),
+    linear-gradient(180deg, #f8fbff 0%, #eef8ff 48%, #effaf5 100%);
   min-height: 100vh;
   padding: 0.6rem 0 1.2rem;
   color: #0f172a;
@@ -29,8 +30,8 @@
   border-radius: 26px;
   padding: 1.05rem 1.15rem;
   margin-bottom: 1.1rem;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.94), rgba(37, 99, 235, 0.88));
-  box-shadow: 0 26px 56px rgba(37, 99, 235, 0.16);
+  background: var(--gradient-hero);
+  box-shadow: var(--shadow-premium);
   color: white;
 }
 
@@ -114,10 +115,10 @@
 }
 
 .ap-dates-card {
-  background: rgba(255, 255, 255, 0.82);
+  background: var(--gradient-card);
   border-radius: 28px;
   padding: 1.35rem 1.35rem 1.5rem;
-  box-shadow: 0 20px 42px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 20px 42px rgba(15, 23, 42, 0.065), 0 8px 20px rgba(37, 99, 235, 0.045);
   margin-bottom: 2rem;
   border: 1px solid rgba(148, 163, 184, 0.14);
   backdrop-filter: blur(14px);
@@ -239,15 +240,20 @@
   width: 82px;
   min-height: 92px;
   border-radius: 20px;
-  border: 1px solid #dbe3ef;
-  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid rgba(191, 219, 254, 0.72);
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.28rem;
   cursor: pointer;
-  transition: all 0.22s ease;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background-color 0.22s ease,
+    color 0.22s ease;
   box-shadow: 0 10px 20px rgba(15, 23, 42, 0.03);
 }
 
@@ -258,10 +264,10 @@
 }
 
 .ap-day-btn.is-active {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: var(--gradient-primary);
   border-color: #2563eb;
   color: #ffffff;
-  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.22);
+  box-shadow: 0 14px 26px rgba(37, 99, 235, 0.24), 0 8px 18px rgba(20, 184, 166, 0.12);
   transform: translateY(-1px);
 }
 
@@ -343,8 +349,8 @@
   min-height: 46px;
   padding: 0.72rem 0.95rem;
   border-radius: 14px;
-  border: 1px solid #dbe3ef;
-  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid rgba(191, 219, 254, 0.72);
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
   color: #0f172a;
   font-size: 0.95rem;
   font-weight: 700;
@@ -388,8 +394,8 @@
   user-select: none;
   padding: 0.7rem 0.9rem;
   border-radius: 999px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(191, 219, 254, 0.6);
 }
 
 .ap-filter-label input[type="checkbox"] {
@@ -432,11 +438,11 @@
 .ap-court-card {
   min-width: 0;
   scroll-margin-top: 96px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 16px;
+  background: var(--gradient-card);
+  border-radius: 20px;
   padding: 0.6rem;
   border: 1px solid rgba(148, 163, 184, 0.14);
-  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.055);
   backdrop-filter: blur(10px);
   transition:
     transform 0.22s ease,
@@ -628,7 +634,7 @@
 }
 
 .ap-slot-pill.is-selected {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: var(--gradient-primary);
   color: #ffffff;
   border: 1px solid #1d4ed8;
   box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
@@ -674,7 +680,7 @@
   height: calc(var(--ap-bar-height) + env(safe-area-inset-bottom, 0px));
   min-height: calc(var(--ap-bar-height) + env(safe-area-inset-bottom, 0px));
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   border-top: 1px solid rgba(226, 232, 240, 0.9);
   box-shadow: 0 -14px 40px rgba(15, 23, 42, 0.08);
@@ -856,8 +862,8 @@
   height: 52px;
   padding: 0.28rem;
   border-radius: 16px;
-  background: #eaf1ff;
-  border: 1px solid #cfe0ff;
+  background: linear-gradient(135deg, #eaf4ff, #ecfeff);
+  border: 1px solid rgba(147, 197, 253, 0.58);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
   width: 100%;
   min-width: 0;
@@ -876,7 +882,11 @@
   font-weight: 600;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.18s ease;
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -898,7 +908,7 @@
 }
 
 .ap-payment-option.is-active {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: var(--gradient-primary);
   color: #ffffff;
   font-weight: 600;
   box-shadow: 0 6px 14px rgba(37, 99, 235, 0.18);
@@ -914,11 +924,15 @@
   line-height: 1.2;
   font-weight: 800;
   border-radius: 14px;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: var(--gradient-primary);
   color: white;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
   box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
   white-space: nowrap;
   box-sizing: border-box;
@@ -932,7 +946,7 @@
 }
 
 .ap-reserve-btn:hover:not(:disabled) {
-  background: #1d4ed8;
+  background: var(--gradient-primary-hover);
   transform: translateY(-1px);
 }
 

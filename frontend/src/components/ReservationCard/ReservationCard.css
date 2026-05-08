@@ -1,11 +1,11 @@
 .res-card {
   position: relative;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.94);
-  border-radius: 20px;
+  background: var(--gradient-card);
+  border-radius: 22px;
   padding: 0.95rem;
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.045);
-  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.055), 0 6px 18px rgba(37, 99, 235, 0.035);
+  border: 1px solid rgba(148, 163, 184, 0.15);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -22,7 +22,7 @@
   left: 0;
   height: 3px;
   width: 100%;
-  background: linear-gradient(90deg, #3b82f6, #10b981);
+  background: var(--gradient-primary);
 }
 
 .res-card--inactive::before {
@@ -31,8 +31,8 @@
 
 .res-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 36px rgba(15, 23, 42, 0.08);
-  border-color: rgba(148, 163, 184, 0.2);
+  box-shadow: 0 22px 40px rgba(15, 23, 42, 0.085), 0 8px 22px rgba(37, 99, 235, 0.06);
+  border-color: rgba(96, 165, 250, 0.28);
 }
 
 .res-card--confirming {
@@ -156,9 +156,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #eff6ff;
-  color: #1d4ed8;
-  border: 1px solid #dbeafe;
+  background: linear-gradient(135deg, #eff6ff, #ccfbf1);
+  color: #075985;
+  border: 1px solid rgba(191, 219, 254, 0.88);
   flex-shrink: 0;
 }
 
@@ -268,8 +268,8 @@
   margin-bottom: 0.5rem;
   padding: 0.65rem 0.7rem;
   border-radius: 14px;
-  background: linear-gradient(180deg, rgba(248, 250, 252, 0.96), #ffffff);
-  border: 1px solid #e2e8f0;
+  background: linear-gradient(180deg, rgba(248, 251, 255, 0.96), #ffffff);
+  border: 1px solid rgba(191, 219, 254, 0.55);
 }
 
 .res-card__main-row {
@@ -304,7 +304,7 @@
 }
 
 .res-card__main-price {
-  color: #2563eb;
+  color: #0f766e;
   font-size: 1rem;
   font-weight: 800;
   line-height: 1.2;
@@ -325,8 +325,8 @@
 }
 
 .res-card__payment-badge--online {
-  background: #eff6ff;
-  color: #1d4ed8;
+  background: linear-gradient(135deg, #eff6ff, #ecfeff);
+  color: #075985;
   border-color: #bfdbfe;
 }
 

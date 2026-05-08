@@ -1,5 +1,8 @@
 .admin__page {
   padding: 1.25rem 0 2.4rem;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(20, 184, 166, 0.1), transparent 24rem),
+    radial-gradient(circle at 88% 2%, rgba(37, 99, 235, 0.13), transparent 25rem);
 }
 
 .admin__container {
@@ -18,8 +21,8 @@
   border-radius: 30px;
   padding: 0.9rem 1.1rem;
   margin-bottom: 0.9rem;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(37, 99, 235, 0.9));
-  box-shadow: 0 22px 46px rgba(37, 99, 235, 0.12);
+  background: var(--gradient-hero);
+  box-shadow: var(--shadow-premium);
   color: #ffffff;
 }
 
@@ -137,7 +140,7 @@
 
 .admin__hero-tab.is-active {
   border-color: rgba(191, 219, 254, 0.9);
-  background: linear-gradient(135deg, #ffffff, #eaf2ff);
+  background: linear-gradient(135deg, #ffffff, #eaf8ff);
   color: #0f172a;
   box-shadow:
     0 12px 24px rgba(15, 23, 42, 0.18),
@@ -300,8 +303,9 @@
 .admin__section-card {
   border-radius: 24px;
   padding: 0.9rem;
-  background: #ffffff;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.045);
+  background: var(--gradient-card);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.055), 0 6px 18px rgba(37, 99, 235, 0.035);
 }
 
 .admin__section-card > .court-form__wrapper {
@@ -398,8 +402,8 @@
   border-radius: 20px;
   padding: 0.85rem 0.95rem;
   border: 1px solid rgba(148, 163, 184, 0.14);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), #ffffff);
-  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.045);
+  background: var(--gradient-card);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.055);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -566,7 +570,7 @@
 }
 
 .admin__section-card--executive {
-  background: linear-gradient(180deg, #ffffff, #fcfdff);
+  background: var(--gradient-card);
 }
 
 .admin__insight-label {
@@ -613,8 +617,8 @@
   gap: 0.4rem;
   padding: 0.82rem 0.9rem;
   border-radius: 16px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: linear-gradient(180deg, #f8fbff, #ffffff);
+  border: 1px solid rgba(191, 219, 254, 0.52);
   transition:
     transform 0.2s ease,
     background-color 0.2s ease,
@@ -680,11 +684,11 @@
 }
 
 .admin__metric-bar-fill {
-  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  background: linear-gradient(90deg, #2563eb, #0ea5e9);
 }
 
 .admin__metric-bar-fill--secondary {
-  background: linear-gradient(90deg, #10b981, #34d399);
+  background: linear-gradient(90deg, #0ea5e9, #14b8a6);
 }
 
 .admin__metric-bar-fill--tertiary {
@@ -718,8 +722,8 @@
 .admin__log-item {
   border-radius: 18px;
   padding: 0.9rem 0.95rem;
-  background: linear-gradient(180deg, #fbfdff, #ffffff);
-  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: var(--gradient-card);
+  border: 1px solid rgba(148, 163, 184, 0.16);
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -842,7 +846,7 @@
   border-radius: 18px;
   padding: 0.95rem 1rem;
   border: 1px solid rgba(148, 163, 184, 0.14);
-  background: linear-gradient(180deg, #fafcff, #ffffff);
+  background: var(--gradient-card);
 }
 
 .admin__court-quick-stat-label {
@@ -1169,10 +1173,14 @@
   padding: 12px 14px;
   border-radius: 12px;
 
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: linear-gradient(180deg, #f8fbff, #ffffff);
+  border: 1px solid rgba(191, 219, 254, 0.52);
 
-  transition: all 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .activity-item:hover {
@@ -1345,7 +1353,9 @@
 
 /* HOVER */
 .admin__table tbody tr {
-  transition: all 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .admin__table tbody tr:hover {
@@ -1479,15 +1489,20 @@
   border: none;
   cursor: pointer;
 
-  background: #f1f5f9;
+  background: linear-gradient(180deg, #f8fbff, #ffffff);
   color: #334155;
 
-  transition: all 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .admin__role-action:hover {
-  background: #2563eb;
+  background: var(--gradient-primary);
   color: white;
+  transform: translateY(-1px);
 }
 
 .admin__user-detail-card {
