@@ -980,28 +980,34 @@ function AdminPage() {
     return statsByCourt.filter((item) => item.value > 0);
   }, [statsByCourt]);
 
+  // Memoritzar només les estadístiques de franja horària que realment tenen activitat per millorar la lectura del dashboard
   const activeTimeslotStats = useMemo(() => {
     return statsByTimeslot.filter((item) => item.value > 0);
   }, [statsByTimeslot]);
 
+  // Memoritzar només les estadístiques de data que realment tenen activitat per millorar la lectura del dashboard
   const activeDateStats = useMemo(() => {
     return statsByDate.filter((item) => item.value > 0);
   }, [statsByDate]);
 
+  // Memoritzar les últimes 5 estadístiques de data amb activitat per mostrar les més recents al dashboard, assegurant que els valors estiguin actualitzats quan les dades de les estadístiques canviïn, evitant càlculs innecessaris en cada renderitzat i millorant la lectura del dashboard
   const recentDateStats = useMemo(() => {
     return activeDateStats.slice(-5).reverse();
   }, [activeDateStats]);
 
+  // Memoritzar la pista, franja horària i data més populars segons les estadístiques d'activitat, per destacar-les al dashboard i assegurar que els valors estiguin actualitzats quan les dades de les estadístiques canviïn, evitant càlculs innecessaris en cada renderitzat
   const topCourt = useMemo(() => {
     if (!activeCourtStats.length) return null;
     return [...activeCourtStats].sort((a, b) => b.value - a.value)[0];
   }, [activeCourtStats]);
 
+  // Memoritzar la franja horària més popular segons les estadístiques d'activitat, per destacar-la al dashboard i assegurar que els valors estiguin actualitzats quan les dades de les estadístiques canviïn, evitant càlculs innecessaris en cada renderitzat
   const topTimeslot = useMemo(() => {
     if (!activeTimeslotStats.length) return null;
     return [...activeTimeslotStats].sort((a, b) => b.value - a.value)[0];
   }, [activeTimeslotStats]);
 
+  // Memoritzar la data més popular segons les estadístiques d'activitat, per destacar-la al dashboard i assegurar que els valors estiguin actualitzats quan les dades de les estadístiques canviïn, evitant càlculs innecessaris en cada renderitzat
   const busiestDate = useMemo(() => {
     if (!activeDateStats.length) return null;
     return [...activeDateStats].sort((a, b) => b.value - a.value)[0];
