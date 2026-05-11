@@ -272,55 +272,6 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="fade-in-up delay-1 home__section">
-          <div className="home__section-header">
-            <span className="home__section-kicker">Per què PadelBook?</span>
-            <h2 className="home__section-title">Una entrada clara al món de les reserves de pàdel</h2>
-            <p className="home__section-text">
-              La pàgina d’inici està pensada per mostrar des del primer moment
-              què pots fer dins PadelBook: consultar disponibilitat, reservar
-              pistes i gestionar les teves reserves de manera ràpida i visual.
-            </p>
-          </div>
-
-          <div
-            className={`home__feature-grid ${isMobileView ? "home__single-column-grid" : ""}`}
-          >
-            <article className="home__feature-card">
-              <div className="home__feature-icon-wrap">
-                <span className="home__feature-icon">🎯</span>
-              </div>
-              <h3 className="home__feature-title">Claredat immediata</h3>
-              <p className="home__feature-text">
-                L’usuari entén ràpidament què pot fer: mirar disponibilitat,
-                reservar i gestionar el seu compte.
-              </p>
-            </article>
-
-            <article className="home__feature-card">
-              <div className="home__feature-icon-wrap">
-                <span className="home__feature-icon">✨</span>
-              </div>
-              <h3 className="home__feature-title">Aspecte més premium</h3>
-              <p className="home__feature-text">
-                Fons suaus, targetes amb profunditat, botons arrodonits i una
-                tipografia més moderna.
-              </p>
-            </article>
-
-            <article className="home__feature-card">
-              <div className="home__feature-icon-wrap">
-                <span className="home__feature-icon">📱</span>
-              </div>
-              <h3 className="home__feature-title">Més agradable en mòbil</h3>
-              <p className="home__feature-text">
-                La disposició s’adapta millor i els blocs tenen més aire i més
-                ordre visual.
-              </p>
-            </article>
-          </div>
-        </section>
-
         <section className="fade-in-up delay-2 home__section">
           <div className="home__section-header">
             <span className="home__section-kicker">Què hi trobaràs?</span>
