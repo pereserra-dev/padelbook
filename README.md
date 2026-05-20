@@ -9,20 +9,6 @@ El projecte està pensat com una plataforma escalable per a clubs esportius que 
 📌 **Projecte FCT / DAW**
 
 ---
-
-## 📸 Captures de pantalla
-
-> Recomanació: afegeix aquí captures reals del projecte abans d’enviar el currículum.
-
-```md
-![Home](./docs/screenshots/home.png)
-![Disponibilitat](./docs/screenshots/availability.png)
-![Panell d'administració](./docs/screenshots/admin.png)
-![Les meves reserves](./docs/screenshots/my-reservations.png)
-```
-
----
-
 ## 🚀 Descripció del projecte
 
 PadelBook permet als usuaris consultar la disponibilitat de pistes, fer reserves per franges horàries i gestionar el seu historial de reserves de manera clara i intuïtiva.
