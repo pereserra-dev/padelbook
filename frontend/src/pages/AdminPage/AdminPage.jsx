@@ -87,6 +87,9 @@ function AdminPage() {
     }
   }, []);
 
+  const currentUserRole = (storedUser?.rol || "").toLowerCase();
+  const canManageUsers = currentUserRole === "admin";
+
   const [userSearch, setUserSearch] = useState("");
   const [userRoleFilter, setUserRoleFilter] = useState("tots");
 
@@ -110,6 +113,8 @@ function AdminPage() {
   const [logSearch, setLogSearch] = useState("");
 
   const handleViewUserDetail = async (userId) => {
+    if (!canManageUsers) return;
+
     if (selectedUser?.id === userId) {
       window.setTimeout(() => {
         scrollToUserRow(userId);
@@ -501,14 +506,16 @@ function AdminPage() {
       setError("");
 
       const [usersRes, reservationsRes, courtsRes, timeSlotsRes, maintenanceRes] = await Promise.all([
-        api.get("/admin/users"),
+        canManageUsers ? api.get("/admin/users") : Promise.resolve({ data: [] }),
         api.get("/admin/reservations"),
         api.get("/courts"),
         api.get("/time-slots"),
         api.get("/admin/maintenance"),
       ]);
 
-      const normalizedUsers = normalizeCollectionResponse(usersRes.data);
+      const normalizedUsers = canManageUsers
+        ? normalizeCollectionResponse(usersRes.data)
+        : [];
       const normalizedReservations = normalizeCollectionResponse(
         reservationsRes.data
       );
@@ -820,6 +827,8 @@ function AdminPage() {
   };
 
   const handleStartUserRoleChange = (userId) => {
+    if (!canManageUsers) return;
+
     setConfirmingUserRoleId((current) => (current === userId ? null : userId));
   };
 
@@ -828,6 +837,8 @@ function AdminPage() {
   };
 
   const handleToggleUserRole = async (user) => {
+    if (!canManageUsers) return;
+
     try {
       setUpdatingUserRoleId(user.id);
 
@@ -908,7 +919,7 @@ function AdminPage() {
       return;
     }
 
-    if (log.entity === "user" && log.entityId) {
+    if (canManageUsers && log.entity === "user" && log.entityId) {
       setActiveTab("users");
 
       setTimeout(() => {
@@ -930,6 +941,18 @@ function AdminPage() {
     hasLoadedInitialDataRef.current = true;
     refreshAllAdminDataRef.current?.();
   }, []);
+
+  useEffect(() => {
+    if (!canManageUsers && activeTab === "users") {
+      setActiveTab("dashboard");
+    }
+  }, [activeTab, canManageUsers]);
+
+  useEffect(() => {
+    if (!canManageUsers && logActionFilter === "UPDATE_USER_ROLE") {
+      setLogActionFilter("totes");
+    }
+  }, [canManageUsers, logActionFilter]);
 
   // Memoritzar les pistes disponibles i cobertes per optimitzar el rendiment en la renderització i càlculs relacionats, evitant càlculs innecessaris en cada renderitzat
   const availableCourts = useMemo(() => {
@@ -1047,6 +1070,14 @@ function AdminPage() {
       const details = (log.details || "").toLowerCase();
       const entity = (log.entity || "").toLowerCase();
       const entityId = String(log.entityId || "").toLowerCase();
+      const isUserLog =
+        entity === "user" ||
+        action.includes("user") ||
+        action.includes("role");
+
+      if (!canManageUsers && isUserLog) {
+        return false;
+      }
 
       const matchesAction =
         logActionFilter === "totes" || log.action === logActionFilter;
@@ -1065,7 +1096,7 @@ function AdminPage() {
 
       return matchesAction && matchesAdmin && matchesSearch;
     });
-  }, [adminLogs, logActionFilter, logAdminFilter, logSearch]);
+  }, [adminLogs, canManageUsers, logActionFilter, logAdminFilter, logSearch]);
 
   const visibleAdminLogs = useMemo(() => {
     return showAllActivity ? filteredAdminLogs : filteredAdminLogs.slice(0, 3);
@@ -1510,15 +1541,17 @@ function AdminPage() {
                   <span className="admin__hero-tab-label">Reserves</span>
                 </button>
 
-                <button
-                  type="button"
-                  className={`admin__hero-tab ${
-                    activeTab === "users" ? "is-active" : ""
-                  }`}
-                  onClick={() => setActiveTab("users")}
-                >
-                  <span className="admin__hero-tab-label">Usuaris</span>
-                </button>
+                {canManageUsers && (
+                  <button
+                    type="button"
+                    className={`admin__hero-tab ${
+                      activeTab === "users" ? "is-active" : ""
+                    }`}
+                    onClick={() => setActiveTab("users")}
+                  >
+                    <span className="admin__hero-tab-label">Usuaris</span>
+                  </button>
+                )}
               </div>
             </div>
 
@@ -1563,14 +1596,16 @@ function AdminPage() {
                     </span>
                   </div>
 
-                  <div className="admin__hero-panel-card">
-                    <span className="admin__hero-panel-card-label">
-                      Usuaris
-                    </span>
-                    <span className="admin__hero-panel-card-value">
-                      {users.length}
-                    </span>
-                  </div>
+                  {canManageUsers && (
+                    <div className="admin__hero-panel-card">
+                      <span className="admin__hero-panel-card-label">
+                        Usuaris
+                      </span>
+                      <span className="admin__hero-panel-card-value">
+                        {users.length}
+                      </span>
+                    </div>
+                  )}
 
                   <div className="admin__hero-panel-card">
                     <span className="admin__hero-panel-card-label">
@@ -2082,7 +2117,9 @@ function AdminPage() {
                             <option value="CREATE_MAINTENANCE">Crear manteniment</option>
                             <option value="UPDATE_MAINTENANCE">Editar manteniment</option>
                             <option value="DELETE_MAINTENANCE">Eliminar manteniment</option>
-                            <option value="UPDATE_USER_ROLE">Canviar rol usuari</option>
+                            {canManageUsers && (
+                              <option value="UPDATE_USER_ROLE">Canviar rol usuari</option>
+                            )}
                           </select>
                         </div>
 
@@ -2169,7 +2206,7 @@ function AdminPage() {
                                   {log.details || "Sense detalls addicionals."}
                                 </p>
 
-                                {(log.entity === "court" || log.entity === "user" || log.entity === "maintenance_block") && (
+                                {(log.entity === "court" || (canManageUsers && log.entity === "user") || log.entity === "maintenance_block") && (
                                   <div className="admin__log-actions">
                                     <button
                                       type="button"
@@ -2260,7 +2297,7 @@ function AdminPage() {
               </section>
             )}
 
-            {activeTab === "users" && (
+            {canManageUsers && activeTab === "users" && (
               <section
                 ref={usersSectionRef}
                 className="fade-in-up delay-2 admin__section admin__section--users"

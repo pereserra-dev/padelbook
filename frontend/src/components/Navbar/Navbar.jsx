@@ -204,7 +204,14 @@ function Navbar() {
   // Obtenir el nom d'usuari per mostrar al menú d'usuari i les inicials per l'avatar
   const userName = getDisplayName(user?.nom);
   const userEmail = user?.email || "";
-  const userRoleLabel = user?.rol === "admin" ? "Administrador" : "Usuari";
+  const userRole = (user?.rol || "").toLowerCase();
+  const canAccessAdminPanel = userRole === "admin" || userRole === "gestor";
+  const userRoleLabel =
+    userRole === "admin"
+      ? "Administrador"
+      : userRole === "gestor"
+      ? "Gestor"
+      : "Usuari";
 
   // Definir els enllaços de navegació basats en l'estat d'autenticació i el rol de l'usuari
   const navLinks = useMemo(() => {
@@ -216,13 +223,13 @@ function Navbar() {
     if (user) {
       links.push({ to: "/my-reservations", label: "Les meves reserves" });
 
-      if (user?.rol === "admin") {
+      if (canAccessAdminPanel) {
         links.push({ to: "/admin", label: "Administració" });
       }
     }
 
     return links;
-  }, [user]);
+  }, [canAccessAdminPanel, user]);
 
   const mobileNavLinks = isAuthPage
     ? navLinks.filter((link) => link.to === "/" || link.to === "/availability")
@@ -341,7 +348,7 @@ function Navbar() {
                       <span>El meu compte</span>
                     </button>
 
-                    {user?.rol === "admin" && (
+                    {canAccessAdminPanel && (
                       <button
                         type="button"
                         className="pb-navbar__dropdown-item"

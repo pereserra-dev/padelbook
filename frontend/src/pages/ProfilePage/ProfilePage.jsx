@@ -187,7 +187,9 @@ function ProfilePage() {
 
   const roleLabel = useMemo(() => {
     if (!profile?.rol) return "Usuari";
-    return profile.rol === "admin" ? "Administrador" : "Usuari";
+    if (profile.rol === "admin") return "Administrador";
+    if (profile.rol === "gestor") return "Gestor";
+    return "Usuari";
   }, [profile]);
 
   const normalizedProfile = useMemo(() => {
@@ -326,6 +328,8 @@ function ProfilePage() {
       text:
         profile?.rol === "admin"
           ? "Tens accés a eines de gestió i administració."
+          : profile?.rol === "gestor"
+          ? "Tens accés a eines de gestió del club."
           : "Tens accés a les funcionalitats habituals de reserva.",
     },
     {
@@ -709,6 +713,8 @@ function ProfilePage() {
                     className={`pb-badge-pill ${
                       profile?.rol === "admin"
                         ? "pb-badge-pill--blue"
+                        : profile?.rol === "gestor"
+                        ? "pb-badge-pill--amber"
                         : "pb-badge-pill--green"
                     } profile__hero-role-badge`}
                   >
